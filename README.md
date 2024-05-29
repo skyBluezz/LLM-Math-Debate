@@ -1,4 +1,5 @@
-# Part 3: LLM Multiagent Debate
+# Group Think and Collective Intelligence
+## Debating Arithmetic between Multiple LLM Agents
 
 ## Intro Thoughts 
 
