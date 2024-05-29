@@ -8,7 +8,7 @@ from gsm_utils import *
 torch.manual_seed(0)
 
 hf_model = "meta-llama/Meta-Llama-3-8B-Instruct"
-hf_token = "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"
+hf_token = "{your-token}"
 max_new_tokens = 200
 model = AutoModel.from_pretrained(hf_model, device_map="auto", load_in_4bit=True, token=hf_token)
 tokenizer = AutoTokenizer.from_pretrained(hf_model, token=hf_token)

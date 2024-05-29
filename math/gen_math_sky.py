@@ -8,11 +8,11 @@ import time
 import pickle
 from tqdm import tqdm
 from transformers import AutoModel, AutoTokenizer, pipeline
-import torch 
+import torch
 
 torch.manual_seed(0)
 hf_model = "meta-llama/Meta-Llama-3-8B-Instruct"
-hf_token = "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"
+hf_token = "{your-token}"
 max_new_tokens = 200
 
 model = AutoModel.from_pretrained(hf_model, device_map="auto", load_in_4bit=True, token=hf_token)
@@ -34,7 +34,7 @@ def generate_answer(inquiry):
                 do_sample=True,
                 top_k=10,
                 return_full_text=False)
-    
+
     return response
 
 def parse_bullets(sentence):
@@ -123,11 +123,11 @@ if __name__ == "__main__":
                 a, b, c, d, e, f = np.random.randint(0, 20, 6)
                 operators = ['+', '-', '*']*2
                 random.shuffle(operators)
-                equation = "{}{}{}{}{}{}{}{}{}".format(a, operators[0], b, operators[1], c, operators[2], 
+                equation = "{}{}{}{}{}{}{}{}{}".format(a, operators[0], b, operators[1], c, operators[2],
                                                        d, operators[3], e, operators[4], f)
 
                 answer = eval(equation)
-                
+
                 agent_contexts = [[{"role": "user", "content": """What is the result of {}? Please do not respond with any questions.  Make sure to state your answer at the end of the response.""".format(equation)}] for agent in range(agents)]
 
                 content = agent_contexts[0][0]['content']
@@ -175,7 +175,7 @@ if __name__ == "__main__":
             pickle.dump(generated_description, open("math_agents{}_rounds{}.p".format(agents, rounds), "wb"))
             data = pd.concat([pd.DataFrame([[agents, rounds, evaluation_round, eval_mean, eval_std]], columns=data.columns), data], ignore_index=True)
             data.to_csv("experiment_data.csv", index=False)
-        
+
     import pdb
     pdb.set_trace()
     print(answer)
