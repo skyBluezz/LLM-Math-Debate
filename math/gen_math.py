@@ -6,7 +6,7 @@ import pickle
 import pdb
 from tqdm import tqdm
 
-openai.api_key = "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"
+openai.api_key = "{your-token}"
 
 def parse_bullets(sentence):
     bullets_preprocess = sentence.split("\n")
