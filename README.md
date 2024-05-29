@@ -5,7 +5,7 @@
 
 Did you know that if you connect multiple LLMs, and let them talk math (without restricting verbosity), the conversation becomes an ego-based sword battle?  At least this is what occured using [Llama-3](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) and putting little restrictions on the LLM's output.  
 
-(**Insert image / example of this**)
+![](images/funny_challenging.png)
 
 The intention of this research is to exploit the power of collective knowledge.  We know in our personal lives (and has been studied in Social Science too), that cooperative actors, perhaps 
 each with a different set of knowledge or beliefs, can reach quality answers for difficult problems across a wide set of topics.  There is a tradeoff however, as too many actors can pollute the space with noise and ideas, making it difficult to attend to each and every argument.  This is the reason court jurys were lowered to 12 people, rather than 18.  This experiment looks to analyze this phenomena in LLMs.  
